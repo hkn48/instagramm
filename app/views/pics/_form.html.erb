@@ -1,4 +1,4 @@
-<%= simple_form_for @pic, html: {multipart: true} do |f| %>
+<%= simple_form_for @pic, html: { class: 'form-horizontal', multipart: true} do |f| %>
 	<% if @pic.errors.any? %>
 		<div id="erros">
 			<h2> <%= pluralize(@pic.errors.count,"errors") %> prevented this from saving. </h2>
@@ -16,5 +16,5 @@
 	<div class="form-group">
 		<%= f.input :description, input_html: {class: 'form-control'} %>
 	</div>
-	<%= f.button :submit, class: 'btn btn-info' %>
+	<%= f.submit "Kaydet", class: 'btn btn-info' %>
 <% end %>
