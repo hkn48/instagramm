@@ -4,6 +4,10 @@
 			<div class="box panel panel-default">
 				<%= link_to (image_tag pic.image.url), pic %>
 				<h2> <%= link_to pic.title, pic %> </h2>
+				<%= link_to like_pic_path(pic), method: :put, class: "btn btn-default" do %>
+					<span class="glyphicon glyphicon-thumbs-up"></span>
+					<%= pic.get_upvotes.size %>
+				<% end %>
 			</div>
 		<% end %>
 	</div>
